@@ -1,0 +1,84 @@
+/* ==========================================================================
+   READING STAMINA APP — DESIGN TOKENS
+   Soft creme, soft black, white. Minimalist. Nothing competes with the text.
+   ========================================================================== */
+
+:root {
+  /* --- Surface ----------------------------------------------------------
+     Three warm neutrals, not one. The APP is creme; the BOOK is white.
+     Entering the reading screen makes the world get lighter and cleaner —
+     the book is a different material from the software around it.       */
+  --paper:         #F6F1E7;   /* app background */
+  --paper-raised:  #FDFBF6;   /* cards, sheets, inputs */
+  --page:          #FFFDFA;   /* the reading surface ONLY */
+
+  /* --- Ink -------------------------------------------------------------- */
+  --ink:           #1B1917;   /* primary text, filled buttons */
+  --ink-2:         #57524A;   /* secondary text */
+  --ink-3:         #8E867A;   /* muted: lead-in, deadlines, hints */
+  --rule:          #E4DDD0;   /* hairlines */
+  --rule-soft:     #EFE9DD;
+
+  /* --- Functional only. Never decorative. -------------------------------- */
+  --alert:         #8F4A3C;   /* validation errors. Rarely seen. */
+
+  /* NO chromatic accent exists in this app. State is carried by weight,
+     opacity, and copy — never by hue.                                    */
+
+  /* --- Type -------------------------------------------------------------
+     The rule is structural: SERIF IS THE BOOK, SANS IS THE APP.
+     Nothing the user reads for pleasure is ever set in sans.            */
+  --font-display:  "Newsreader", Georgia, serif;   /* headings, graduation */
+  --font-read:     "Literata", Georgia, serif;     /* all book + article text */
+  --font-ui:       "Inter", system-ui, sans-serif; /* buttons, labels, inputs */
+
+  --text-display:  2.125rem;  /* 34px — onboarding headlines */
+  --text-title:    1.375rem;  /* 22px — book titles */
+  --text-read:     1.1875rem; /* 19px — reading body */
+  --text-body:     0.9375rem; /* 15px — UI body */
+  --text-label:    0.8125rem; /* 13px — deadlines, hints */
+  --text-micro:    0.6875rem; /* 11px — eyebrow labels, uppercase */
+
+  --leading-read:  1.72;      /* long-form comfort */
+  --leading-tight: 1.22;      /* display */
+  --leading-ui:    1.45;
+
+  --measure:       34em;      /* ~62-66 characters. Never wider. */
+
+  /* --- Space (4px base) -------------------------------------------------- */
+  --s-1: 4px;   --s-2: 8px;   --s-3: 12px;  --s-4: 16px;
+  --s-5: 24px;  --s-6: 32px;  --s-7: 48px;  --s-8: 64px;  --s-9: 96px;
+
+  /* --- Shape ------------------------------------------------------------- */
+  --r-card:  14px;
+  --r-input: 14px;
+  --r-pill:  999px;
+
+  /* --- Elevation — almost none. Sheets only. ----------------------------- */
+  --shadow-sheet: 0 1px 2px rgba(27,25,23,.04), 0 12px 32px rgba(27,25,23,.06);
+
+  /* --- Motion ------------------------------------------------------------ */
+  --ease:      cubic-bezier(.2,.6,.2,1);
+  --dur:       220ms;
+  --dur-slow:  380ms;
+}
+
+/* --- Dark mode: reading at night is the primary use case ------------------ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper:        #171613;
+    --paper-raised: #201E1A;
+    --page:         #1C1A17;   /* still lighter than app chrome */
+    --ink:          #EFEAE0;
+    --ink-2:        #B3ABA0;
+    --ink-3:        #7A736A;
+    --rule:         #2E2B26;
+    --rule-soft:    #262320;
+    --alert:        #C87A6B;
+    --shadow-sheet: 0 1px 2px rgba(0,0,0,.3), 0 12px 32px rgba(0,0,0,.35);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}

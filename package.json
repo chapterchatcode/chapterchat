@@ -1,0 +1,33 @@
+{
+  "name": "chapter-chat-v2",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/gen-theme.mjs && vite",
+    "build": "node scripts/gen-theme.mjs && tsc -b && vite build && node scripts/postbuild.mjs",
+    "preview": "vite preview",
+    "test": "tsx src/core.test.ts",
+    "typecheck": "tsc -b --force",
+    "gen:theme": "node scripts/gen-theme.mjs",
+    "verify": "tsx scripts/acceptance.ts",
+    "smoke": "node scripts/fixture-book.mjs && node scripts/smoke.mjs",
+    "test:v2": "tsx src/rampv2.test.ts"
+  },
+  "dependencies": {
+    "idb": "^8.0.0",
+    "jszip": "^3.10.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "esbuild": "^0.28.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
+}
